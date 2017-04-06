@@ -59,6 +59,7 @@ LOCAL_APPS = [
     # custom users app
     'watson.users.apps.UsersConfig',
     # Your stuff: custom apps go here
+    'app',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -111,10 +112,10 @@ MANAGERS = ADMINS
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres://localhost/watson'),
-}
-DATABASES['default']['ATOMIC_REQUESTS'] = True
+# DATABASES = {
+#     'default': env.db('DATABASE_URL', default='postgres://localhost/watson'),
+# }
+# DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 
 # GENERAL CONFIGURATION

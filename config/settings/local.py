@@ -28,6 +28,17 @@ SECRET_KEY = env('DJANGO_SECRET_KEY', default='fKW/tEN4nAeF5r:rY5(z/%KKWD&k^;}?]
 # Mail settings
 # ------------------------------------------------------------------------------
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'watson',
+        'USER': 'austin',
+        'PASSWORD': 'sn0wshred',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+
 EMAIL_PORT = 1025
 
 EMAIL_HOST = 'localhost'

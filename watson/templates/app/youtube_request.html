@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>test</h1>
+<form id="youtubeForm">
+  {% csrf_token %}
+<input type="text" name="youtube_url">
+<button type="submit">Submit</button>
+</form>
+<div class="results-holder">
+  
+</div>
+{% endblock content %}

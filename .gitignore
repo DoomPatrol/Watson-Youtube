@@ -65,3 +65,5 @@ watson/media/
 
 staticfiles/
 venv/
+
+app/credentials.py

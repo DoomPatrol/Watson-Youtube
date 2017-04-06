@@ -19,3 +19,21 @@ Issues with the above approach:
 4. Undocumented: No mention in the documentation, or it's too hard for me to find
 */
 $('.form-group').removeClass('row');
+
+$('#youtubeForm').submit(function(e) {
+  e.preventDefault();
+  form = $('#youtubeForm');
+    $.ajax({
+    type: "POST",
+    url: /app/,
+    data: form.serializeArray(),
+    beforeSend: function() {
+      $('.results-holder').append('<h1>GETTING YOUR RESULTS</h1>');
+    },
+    success: function(comment){
+      $('.results-holder').empty();
+      $('.results-holder').append(comment.toString());
+      console.log(comment);
+    },
+  });
+});

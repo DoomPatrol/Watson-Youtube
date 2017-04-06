@@ -31,6 +31,7 @@ django-allauth==0.31.0
 
 # On Windows, you must download/install psycopg2 manually
 # from http://www.lfd.uci.edu/~gohlke/pythonlibs/#psycopg
+psycopg2==2.6.2
 
 
 # Unicode slugification
@@ -48,3 +49,7 @@ redis>=2.10.5
 
 
 # Your custom requirements go here
+
+#watson
+pysolr==3.6.0
+watson-developer-cloud==0.25.2
