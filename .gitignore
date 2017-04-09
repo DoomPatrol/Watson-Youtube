@@ -67,3 +67,4 @@ staticfiles/
 venv/
 
 app/credentials.py
+config/
