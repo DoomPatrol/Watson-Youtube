@@ -1,7 +1,7 @@
 import sys
 import json
 from watson_developer_cloud import ToneAnalyzerV3
-from .credentials import watson_credentials, youtube_credentials
+from app.credentials import watson_credentials, youtube_credentials
 import requests
 from operator import itemgetter
 
