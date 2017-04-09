@@ -36,3 +36,62 @@
 [hidden][style="display: block;"] {
   display: block !important;
 }
+
+.page-top {
+  text-align: center;
+}
+
+.form-and-submit {
+  padding-top: 20px;
+}
+
+.watson-nav {
+  background: #9855d4 !important;
+  color: #fff !important;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+}
+
+.navbar-brand {
+  float: none;
+}
+
+input {
+  min-width: 80%;
+  min-height: 50px;
+  border: none;
+  border-bottom: 4px solid #9855d4;
+}
+
+input:focus {
+  outline: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background-color: none;
+}
+
+.submit-button {
+  min-height: 50px;
+  vertical-align: top;
+  border-radius: 0;
+  background: none;
+  color: #9855d4;
+  border: 3px solid #9855d4;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.submit-button:hover {
+  background: #9855d4;
+  color: #fff;
+}
+
+.results-holder {
+  padding-top: 30px;
+}

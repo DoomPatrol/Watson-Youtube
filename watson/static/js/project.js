@@ -28,12 +28,25 @@ $('#youtubeForm').submit(function(e) {
     url: /app/,
     data: form.serializeArray(),
     beforeSend: function() {
-      $('.results-holder').append('<h1>GETTING YOUR RESULTS</h1>');
+      $('.results-holder').empty();
+      $('.results-holder').append('<h3 class="text-center">Analyzing your results...</h3>');
     },
     success: function(comment){
       $('.results-holder').empty();
-      $('.results-holder').append(comment.toString());
       console.log(comment);
+      var results = JSON.parse(comment);
+      for(i = 0; i < 3; i++){
+        var counter = i+1;
+        console.log(results[0].scores[i].tone_name);
+        if(parseInt(results[0].scores[i].score) < .5){
+          $('.results-holder').append('<p>The #' + counter + ' emotion in this video\'s comments is '+ results[0].scores[i].tone_name + '.');
+        }
+        else if(parseInt(results[0].scores[i].score) > .5 && parseInt(results[0].scores[i].score) < .75){
+          $('.results-holder').append('<p>The #' + counter + ' emotion in this video\'s comments is '+ results[0].scores[i].tone_name + '.');
+        } else {
+          $('.results-holder').append('<p>The #' + counter + ' emotion in this video\'s comments is '+ results[0].scores[i].tone_name + '.');
+        }
+      }
     },
   });
 });

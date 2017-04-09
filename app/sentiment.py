@@ -33,7 +33,6 @@ def sentiment_analysis(words):
 	return_sentiment = json.loads(return_sentiment)
 	comment_template_object = []
 	for tone in return_sentiment['document_tone']['tone_categories']:
-		print('THIS IS A TONE   ', tone)
 		tone_obj = {}
 		tone_obj['category_name'] = tone['category_name']
 		tone_obj['category_id'] = tone['category_id']
@@ -61,7 +60,5 @@ def main(video):
 	comments = get_comments(video)
 
 	sentiment = sentiment_analysis(comments)
-
-	print(sentiment)
 
 	return sentiment

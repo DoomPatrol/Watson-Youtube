@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>test</h1>
-<form id="youtubeForm">
-  {% csrf_token %}
-<input type="text" name="youtube_url">
-<button type="submit">Submit</button>
-</form>
+<div class="page-top">
+  <h1>YouTube Sentiment Analyzer</h1>
+  <p>Please paste a link to the YouTube video you want to analyze below.</p>
+</div>
+<div class="form-and-submit">
+  <form id="youtubeForm">
+    {% csrf_token %}
+  <input type="text" placeholder="YouTube URL" name="youtube_url">
+  <button class="btn submit-button" type="submit">Submit</button>
+  </form>
+</div>
 <div class="results-holder">
-  
 </div>
 {% endblock content %}
