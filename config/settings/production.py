@@ -20,7 +20,7 @@ from .base import *  # noqa
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Raises ImproperlyConfigured exception if DJANGO_SECRET_KEY not in os.environ
-SECRET_KEY = env('DJANGO_SECRET_KEY')
+SECRET_KEY = 'env('DJANGO_SECRET_KEY')'
 
 
 # This ensures that Django will be able to detect a secure connection
@@ -54,6 +54,17 @@ ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['watsonyoutube.com', ]
 # END SITE CONFIGURATION
 
 INSTALLED_APPS += ['gunicorn', ]
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd70ptanfapnvil',
+        'USER': 'orchmcvlpslgnu',
+        'PASSWORD': 'cd8f288aafef153922e7fa438c12f0728ef2b1ea76626256cdcc1e80a51e489e',
+        'HOST': 'ec2-54-235-80-137.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 
 # STORAGE CONFIGURATION
@@ -110,13 +121,8 @@ DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
 EMAIL_SUBJECT_PREFIX = env('DJANGO_EMAIL_SUBJECT_PREFIX', default='[Watson]')
 SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
 
-# Anymail with Mailgun
-INSTALLED_APPS += ['anymail', ]
-ANYMAIL = {
-    'MAILGUN_API_KEY': env('DJANGO_MAILGUN_API_KEY'),
-    'MAILGUN_SENDER_DOMAIN': env('MAILGUN_SENDER_DOMAIN')
-}
-EMAIL_BACKEND = 'anymail.backends.mailgun.MailgunBackend'
+EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
+                    default='django.core.mail.backends.console.EmailBackend')
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
